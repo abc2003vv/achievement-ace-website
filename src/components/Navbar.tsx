@@ -5,7 +5,7 @@ import { Gamepad } from "lucide-react";
 
 const Navbar = () => {
   return (
-    <nav className="w-full py-4 backdrop-blur-md bg-[#0EA5E9]/80 fixed top-0 z-10 shadow-sm">
+    <nav className="w-full py-4 backdrop-blur-md bg-[#F97316]/80 fixed top-0 z-10 shadow-sm">
       <div className="container mx-auto flex items-center justify-between">
         <div className="text-white font-bold text-xl flex items-center">
           <Gamepad className="mr-2 text-white" />
@@ -13,6 +13,7 @@ const Navbar = () => {
         </div>
         <div className="space-x-4 hidden md:flex">
           <Button variant="ghost" className="text-white hover:bg-white/10">Trang Chủ</Button>
+          <Button variant="ghost" className="text-white hover:bg-white/10">Dự Án</Button>
           <Button variant="ghost" className="text-white hover:bg-white/10">Thành Tựu</Button>
           <Button variant="ghost" className="text-white hover:bg-white/10">Liên Hệ</Button>
         </div>

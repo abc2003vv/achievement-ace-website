@@ -44,11 +44,11 @@ const Awards = () => {
   ];
 
   return (
-    <div className="bg-[#0EA5E9]/5 py-20" id="awards">
+    <div className="bg-[#F97316]/5 py-20" id="awards">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-center mb-12">
-          <Gamepad className="h-10 w-10 text-[#0EA5E9] mr-3" />
-          <h2 className="text-3xl md:text-4xl font-bold text-[#0EA5E9] text-center">
+          <Gamepad className="h-10 w-10 text-[#F97316] mr-3" />
+          <h2 className="text-3xl md:text-4xl font-bold text-[#F97316] text-center">
             Thành Tựu & Giải Thưởng
           </h2>
         </div>

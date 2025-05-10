@@ -5,7 +5,7 @@ import { Gamepad } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#0EA5E9] text-white py-12">
+    <footer className="bg-[#F97316] text-white py-12">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
