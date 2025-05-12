@@ -1,34 +1,43 @@
-
 import React from "react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Trophy, Gamepad } from "lucide-react";
+import { Gamepad2 } from "lucide-react";
 
 interface AwardCardProps {
   title: string;
   organization: string;
-  date: string;
-  description: string;
-  delay: number;
+  award: string;
+  image: string;
+  delay?: number;
 }
 
-const AwardCard = ({ title, organization, date, description, delay }: AwardCardProps) => {
+const AwardCard = ({
+  title,
+  organization,
+  award,
+  image,
+  delay = 0,
+}: AwardCardProps) => {
   return (
-    <Card className="border border-[#F97316]/20 hover:shadow-lg transition-shadow duration-300 animate-fade-in opacity-0" style={{animationDelay: `${delay}s`}}>
-      <CardHeader className="bg-gradient-to-r from-[#F97316] to-[#FB923C] text-white pb-2">
-        <div className="flex items-center justify-between">
-          <CardTitle className="text-xl font-semibold flex items-center">
-            <Gamepad className="h-5 w-5 text-white mr-2" /> {title}
-          </CardTitle>
-          <span className="bg-[#EA580C] text-white text-xs font-semibold px-2 py-1 rounded">
-            {date}
-          </span>
+    <div
+      className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300 opacity-0 animate-fade-in"
+      style={{ animationDelay: `${delay}s`, animationFillMode: "forwards" }}
+    >
+      <div className="w-full aspect-[3/2] overflow-hidden rounded-t-xl">
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-full object-cover object-center transition-transform duration-300 hover:scale-105"
+        />
+      </div>
+
+      <div className="p-4 text-center">
+        <div className="flex justify-center items-center text-[#F97316] mb-2">
+          <Gamepad2 className="w-4 h-4 mr-1" />
+          <h3 className="text-base font-bold">{title}</h3>
         </div>
-        <CardDescription className="text-white/80">{organization}</CardDescription>
-      </CardHeader>
-      <CardContent className="pt-4">
-        <p className="text-charcoal">{description}</p>
-      </CardContent>
-    </Card>
+        <p className="text-sm font-medium text-gray-700">{organization}</p>
+        <p className="text-sm text-gray-500">Award: {award}</p>
+      </div>
+    </div>
   );
 };
 

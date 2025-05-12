@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Gamepad } from "lucide-react";
@@ -9,15 +8,25 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between">
         <div className="text-white font-bold text-xl flex items-center">
           <Gamepad className="mr-2 text-white" />
-          Nguyễn Văn A
+          Nguyen Van Viet
         </div>
         <div className="space-x-4 hidden md:flex">
-          <Button variant="ghost" className="text-white hover:bg-white/10">Trang Chủ</Button>
-          <Button variant="ghost" className="text-white hover:bg-white/10">Dự Án</Button>
-          <Button variant="ghost" className="text-white hover:bg-white/10">Thành Tựu</Button>
-          <Button variant="ghost" className="text-white hover:bg-white/10">Liên Hệ</Button>
+          <Button variant="ghost" className="text-white hover:bg-white/10">
+            Home
+          </Button>
+          <Button variant="ghost" className="text-white hover:bg-white/10">
+            Projects
+          </Button>
+          <Button variant="ghost" className="text-white hover:bg-white/10">
+            Achievements
+          </Button>
+          <Button variant="ghost" className="text-white hover:bg-white/10">
+            Contact
+          </Button>
         </div>
-        <Button variant="outline" className="md:hidden text-white border-white">Menu</Button>
+        <Button variant="outline" className="md:hidden text-white border-white">
+          Menu
+        </Button>
       </div>
     </nav>
   );
