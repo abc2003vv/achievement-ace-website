@@ -1,9 +1,9 @@
 import React from "react";
 import AwardCard from "./AwardCard";
-import hackathonImg from "../Images/mamothon.jpg";
-import unityImg from "../Images/korean.jpg";
-import esportImg from "../Images/winner.jpg";
-import innovationImg from "../Images/seco.jpg";
+import hackathonImg from "../Imagess/mamothon.jpg";
+import unityImg from "../Imagess/korean.jpg";
+import esportImg from "../Imagess/winner.jpg";
+import innovationImg from "../Imagess/seco.jpg";
 
 const Awards = () => {
   const awards = [

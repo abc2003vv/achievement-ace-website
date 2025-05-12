@@ -1,5 +1,6 @@
 import React from "react";
-import faceImage from "../Images/Charactergame.jpg";
+import faceImage from "../imagess/Charactergame.jpg";
+
 import {
   Card,
   CardContent,
@@ -35,7 +36,6 @@ const Projects = () => {
       imageUrl: faceImage,
       tags: ["Unity", "2D", "Adventure"],
       year: "2024",
-      sourceLink: "https://github.com/abc2003vv/Berie-s-Adventure2D",
     },
     {
       title: "Game Jump Dash",

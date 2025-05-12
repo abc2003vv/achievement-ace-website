@@ -1,8 +1,8 @@
 import React from "react";
-import facebookIcon from "../images/facebook.png";
-import linkedinIcon from "../images/linkedin.png";
-import gmailIcon from "../images/gmail.png";
-import githubIcon from "../images/github.png";
+import facebookIcon from "../imagess/facebook.png";
+import linkedinIcon from "../imagess/linkedin.png";
+import gmailIcon from "../imagess/gmail.png";
+import githubIcon from "../imagess/github.png";
 
 const Contact = () => {
   return (
