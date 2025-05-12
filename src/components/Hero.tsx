@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Gamepad2, Images } from "lucide-react";
-import faceImage from "../Imagess/face.jpg";
+import faceImage from "../imagess/face.jpg";
 
 const Hero = () => {
   return (
