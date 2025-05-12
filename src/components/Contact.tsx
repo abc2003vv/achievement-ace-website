@@ -2,7 +2,7 @@ import React from "react";
 import facebookIcon from "../imagess/facebook.png";
 import linkedinIcon from "../imagess/linkedin.png";
 import gmailIcon from "../imagess/gmail.png";
-import githubIcon from "../imagess/github.png";
+import githubIcon from "../imagess/github1.png";
 
 const Contact = () => {
   return (
