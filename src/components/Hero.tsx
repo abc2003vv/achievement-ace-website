@@ -27,13 +27,13 @@ const Hero = () => {
           </p>
           <div className="flex space-x-4">
             <Button className="bg-[#F97316] hover:bg-[#EA580C] text-white">
-              <a href="#project">Xem dự án</a>
+              <a href="#project">View Projects</a>
             </Button>
             <Button
               variant="outline"
               className="border-[#F97316] text-[#F97316] hover:bg-[#F97316]/10"
             >
-              Liên hệ
+              Contact
             </Button>
           </div>
         </div>
