@@ -19,7 +19,8 @@ const Projects = () => {
       imageUrl: faceImage,
       tags: ["Unity", "2D", "Adventure"],
       year: "2024",
-      playUrl: "https://abc2003vv.itch.io/beries-adventure", 
+      playUrl: "https://abc2003vv.itch.io/beries-adventure", // Thay bằng link thật
+    },
     {
       title: "Game Jump Dash",
       description:
@@ -28,7 +29,7 @@ const Projects = () => {
         "https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80",
       tags: ["Unity", "2D", "Puzzle"],
       year: "2025",
-      playUrl: "https://abc2003vv.itch.io/game-jump-doash", 
+      playUrl: "https://abc2003vv.itch.io/game-jump-doash", // Thay bằng link thật
     },
   ];
 
