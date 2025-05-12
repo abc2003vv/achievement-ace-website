@@ -1,30 +1,13 @@
 import React from "react";
 import faceImage from "../imagess/Charactergame.jpg";
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Gamepad2, Star, Rocket } from "lucide-react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-
 interface Project {
   title: string;
   description: string;
   imageUrl: string;
   tags: string[];
   year: string;
+  playUrl: string; // ➕ Thêm trường playUrl
 }
 
 const Projects = () => {
@@ -36,15 +19,17 @@ const Projects = () => {
       imageUrl: faceImage,
       tags: ["Unity", "2D", "Adventure"],
       year: "2024",
+      playUrl: "https://your-play-link-berie.com", // Thay bằng link thật
     },
     {
       title: "Game Jump Dash",
       description:
-        "A game where players dodge falling objects to score points and achieve the highest possible accomplishment..",
+        "A game where players dodge falling objects to score points and achieve the highest possible accomplishment.",
       imageUrl:
         "https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80",
       tags: ["Unity", "2D", "Puzzle"],
       year: "2025",
+      playUrl: "https://your-play-link-jumpdash.com", // Thay bằng link thật
     },
   ];
 
@@ -73,7 +58,7 @@ const Projects = () => {
                 <p className="text-sm text-gray-700 mb-2">
                   {project.description}
                 </p>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag, i) => (
                     <span
                       key={i}
@@ -83,6 +68,14 @@ const Projects = () => {
                     </span>
                   ))}
                 </div>
+                <a
+                  href={project.playUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block w-full text-center bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold py-2 px-4 rounded"
+                >
+                  ▶ Play Game
+                </a>
               </div>
             </div>
           ))}
