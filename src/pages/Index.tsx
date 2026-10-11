@@ -5,7 +5,7 @@ import Awards from "@/components/Awards";
 import Projects from "@/components/Projects";
 import Footer from "@/components/Footer";
 import Contact from "@/components/Contact";
-import Reveal from "@/components/Reveal";
+import Experience from "@/components/Experience";
 const Index = () => {
   useEffect(() => {
     // Update document title
@@ -20,15 +20,10 @@ const Index = () => {
       <Navbar />
       <main id="main-content" tabIndex={-1}>
         <Hero />
-        <Reveal>
-          <Projects />
-        </Reveal>
-        <Reveal>
-          <Awards />
-        </Reveal>
-        <Reveal>
-          <Contact />
-        </Reveal>
+        <Experience />
+        <Projects />
+        <Awards />
+        <Contact />
       </main>
       <Footer />
     </div>

@@ -89,3 +89,12 @@ Verification: final `npm run build`, `tsc -p tsconfig.app.json --noEmit`, and ES
 - Added animated All games / Android games / Personal projects filters, section reveal effects, active navigation indicators, and reduced-motion handling.
 - Adapted the supplied NEXZAP reference's cream/orange palette, expressive typography, and game collection to the personal portfolio.
 - Production build, application TypeScript, targeted ESLint, and the presence/format of all 15 image files passed. No browser is connected for visual or interactive QA; this remains pending.
+
+## CV content and transition refinement — 2026-10-11
+
+- Read and visually inspected both pages of the owner's supplied CV. Added Zlab Studio and Ebizworld experience, technical skills, Computer Science education, four linked gameplay prototypes, ICPC participation, and Prompt to Play participation.
+- Corrected award labels and organizers against the CV. Added semantic emphasis to key skills, responsibilities, and the two-week prototype milestone.
+- Added reusable Download CV links in the introduction, experience section, and contact section. `public/cv/Unity-Dev-Nguyen-Van-Viet.pdf` is a byte-for-byte copy of the supplied PDF; no PDF content was edited.
+- Replaced per-card layout/scale transitions with a short sequential fade. The collection height is measured separately and animates without scaling card contents.
+- Removed whole-section reveal wrappers and hero entrance motion. The mobile menu now overlays the page rather than changing its height; navigation emphasis uses a local underline.
+- Production build, application TypeScript, and targeted ESLint passed. Browser inspection could not run: the Windows automation runtime failed to initialize and the browser inventory returned no connected browsers. Live HTTP and CV download checks are recorded after completion.

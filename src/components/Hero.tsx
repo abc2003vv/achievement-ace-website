@@ -1,5 +1,6 @@
 ﻿import { ArrowDown, ArrowUpRight, Code2, Gamepad2 } from "lucide-react";
 import faceImage from "../imagess/Face.jpg";
+import ResumeLink from "@/components/ResumeLink";
 
 const Hero = () => (
   <section id="about" className="hero-section">
@@ -15,17 +16,17 @@ const Hero = () => (
           <span>worth playing.</span>
         </h1>
         <p className="hero-description">
-          A Gameplay / Unity Developer with a Computer Science background at Van
-          Hien University. I bring mobile puzzles and personal game ideas to
-          life with Unity and C#.
+          <strong>Unity Game Developer</strong> focused on{" "}
+          <strong>Puzzle, Casual, and Hypercasual games</strong>. I turn ideas
+          into playable experiences with <strong>Unity and C#</strong>, backed
+          by hands-on work at
+          <strong> Zlab Studio</strong> and <strong>Ebizworld</strong>.
         </p>
         <div className="hero-actions">
           <a href="#projects" className="action-button primary-button">
             Explore my projects <ArrowUpRight size={19} />
           </a>
-          <a href="#contact" className="action-button secondary-button">
-            Get in touch <ArrowUpRight size={19} />
-          </a>
+          <ResumeLink />
         </div>
         <div className="skill-list" aria-label="Technical skills">
           <span>
@@ -34,8 +35,8 @@ const Hero = () => (
           <span>
             <Code2 size={16} /> C#
           </span>
-          <span>Java</span>
-          <span>2D game development</span>
+          <span>2D / 3D</span>
+          <span>Gameplay & Optimization</span>
         </div>
       </div>
       <div className="hero-portrait">

@@ -76,7 +76,11 @@ const ProjectCard = ({ project }: ProjectCardProps) => (
         </div>
       </div>
       <p>{project.description}</p>
-      {project.role && <p className="project-role">{project.role}</p>}
+      {project.role && (
+        <p className="project-role">
+          <strong>{project.role}</strong>
+        </p>
+      )}
       <div className="project-tags">
         {project.tags.map((tag) => (
           <span key={tag}>{tag}</span>

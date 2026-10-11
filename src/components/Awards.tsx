@@ -7,7 +7,7 @@ const Awards = () => {
       <div className="page-container">
         <div className="section-heading">
           <div>
-            <p className="eyebrow">02 / ACHIEVEMENTS</p>
+            <p className="eyebrow">03 / ACHIEVEMENTS</p>
             <h2>Learning. Building. Growing.</h2>
           </div>
           <p>
@@ -18,8 +18,20 @@ const Awards = () => {
         </div>
         <div className="award-grid">
           {awards.map((award) => (
-            <AwardCard key={award.title} {...award} />
+            <AwardCard key={`${award.title}-${award.award}`} {...award} />
           ))}
+        </div>
+        <div className="competition-notes">
+          <p>
+            <strong>ICPC Southern Regional Programming Contest</strong>
+            <span>Competitor · Sep 2025</span>
+          </p>
+          <p>
+            <strong>Prompt to Play — VNG Games</strong>
+            <span>
+              Built a puzzle game within <b>24 hours</b> · Jul 2026
+            </span>
+          </p>
         </div>
       </div>
     </section>

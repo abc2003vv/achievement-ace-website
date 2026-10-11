@@ -1,4 +1,4 @@
-﻿import { useState } from "react";
+﻿import { useLayoutEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { projects } from "@/data/projects";
 import ProjectCard from "@/components/ProjectCard";
@@ -11,17 +11,34 @@ const filters = [
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState("all");
+  const [gridElement, setGridElement] = useState<HTMLDivElement | null>(null);
+  const [gridHeight, setGridHeight] = useState<number>();
   const shouldReduceMotion = useReducedMotion();
   const visibleProjects = projects.filter(
     (project) => activeFilter === "all" || project.category === activeFilter,
   );
+
+  useLayoutEffect(() => {
+    if (!gridElement) {
+      return;
+    }
+
+    const updateHeight = () => {
+      setGridHeight(Math.ceil(gridElement.getBoundingClientRect().height));
+    };
+
+    updateHeight();
+    const observer = new ResizeObserver(updateHeight);
+    observer.observe(gridElement);
+    return () => observer.disconnect();
+  }, [gridElement]);
 
   return (
     <section id="projects" className="section-space projects-section">
       <div className="page-container">
         <div className="section-heading">
           <div>
-            <p className="eyebrow">01 / THE GAME COLLECTION</p>
+            <p className="eyebrow">02 / THE GAME COLLECTION</p>
             <h2>
               Small screens.
               <br />
@@ -29,9 +46,9 @@ const Projects = () => {
             </h2>
           </div>
           <p>
-            Mobile puzzles and personal adventures.
+            <strong>Gameplay / Unity development</strong> across mobile puzzles
             <br />
-            Explore the gameplay. Find your next favorite.
+            and personal adventures. Explore the games below.
           </p>
         </div>
         <div className="project-toolbar">
@@ -47,13 +64,6 @@ const Projects = () => {
                 aria-pressed={activeFilter === filter.value}
                 onClick={() => setActiveFilter(filter.value)}
               >
-                {activeFilter === filter.value && (
-                  <motion.span
-                    className="filter-indicator"
-                    layoutId="project-filter"
-                    transition={shouldReduceMotion ? { duration: 0 } : { type: "spring", stiffness: 380, damping: 32 }}
-                  />
-                )}
                 <span>{filter.label}</span>
                 <span className="filter-count">
                   {filter.value === "all"
@@ -69,26 +79,32 @@ const Projects = () => {
             {visibleProjects.length} games to explore
           </span>
         </div>
-        <motion.div layout={!shouldReduceMotion} className="project-grid">
-          <AnimatePresence mode="popLayout" initial={false}>
-            {visibleProjects.map((project) => (
-              <motion.div
-                key={project.playUrl}
-                layout={!shouldReduceMotion}
-                initial={{
-                  opacity: shouldReduceMotion ? 1 : 0,
-                  y: shouldReduceMotion ? 0 : 18,
-                }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, scale: shouldReduceMotion ? 1 : 0.97 }}
-                transition={{
-                  duration: shouldReduceMotion ? 0 : 0.35,
-                  ease: [0.22, 1, 0.36, 1],
-                }}
-              >
-                <ProjectCard project={project} />
-              </motion.div>
-            ))}
+        <motion.div
+          className="project-stage"
+          initial={false}
+          animate={{ height: gridHeight ?? "auto" }}
+          transition={{
+            duration: shouldReduceMotion ? 0 : 0.28,
+            ease: [0.25, 0.1, 0.25, 1],
+          }}
+        >
+          <AnimatePresence mode="wait" initial={false}>
+            <motion.div
+              key={activeFilter}
+              ref={setGridElement}
+              className="project-grid"
+              initial={{ opacity: shouldReduceMotion ? 1 : 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: shouldReduceMotion ? 1 : 0 }}
+              transition={{
+                duration: shouldReduceMotion ? 0 : 0.16,
+                ease: "easeInOut",
+              }}
+            >
+              {visibleProjects.map((project) => (
+                <ProjectCard key={project.playUrl} project={project} />
+              ))}
+            </motion.div>
           </AnimatePresence>
         </motion.div>
       </div>

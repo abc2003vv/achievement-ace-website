@@ -15,7 +15,7 @@ export const useActiveSection = () => {
       { rootMargin: "-15% 0px -65% 0px", threshold: 0 },
     );
 
-    for (const id of ["about", "projects", "awards", "contact"]) {
+    for (const id of ["about", "experience", "projects", "awards", "contact"]) {
       const section = document.getElementById(id);
       if (section) {
         observer.observe(section);

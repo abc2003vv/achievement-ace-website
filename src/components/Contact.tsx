@@ -1,22 +1,30 @@
 ﻿import { ArrowUpRight, Github, Linkedin, Mail } from "lucide-react";
 
+import ResumeLink from "@/components/ResumeLink";
+import { profile } from "@/data/profile";
+
 const Contact = () => (
   <section id="contact" className="contact-section">
     <div className="page-container contact-grid">
       <div>
-        <p className="eyebrow">03 / LET'S CONNECT</p>
+        <p className="eyebrow">04 / LET'S CONNECT</p>
         <h2>
           Have a game in mind?
           <br />
           <span>Let's build it together.</span>
         </h2>
         <p>
-          For game development opportunities, collaborations,
+          For <strong>Unity game development opportunities</strong>,
+          collaborations,
           <br className="desktop-break" /> or a conversation about my work — I'd
           love to hear from you.
         </p>
       </div>
       <div className="contact-details">
+        <div className="contact-resume">
+          <ResumeLink />
+          <span>{profile.location}</span>
+        </div>
         <a className="email-link" href="mailto:nguyenvanviet170303@gmail.com">
           <Mail size={22} />
           <span>

@@ -1,10 +1,11 @@
 ﻿import { useState } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
-import { motion, useReducedMotion } from "framer-motion";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useActiveSection } from "@/hooks/use-active-section";
 
 const navigation = [
   { label: "About", href: "#about" },
+  { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
   { label: "Achievements", href: "#awards" },
 ];
@@ -48,13 +49,6 @@ const Navbar = () => {
               }
             >
               {item.label}
-              {item.href === `#${activeSection}` && (
-                <motion.span
-                  className="navigation-indicator"
-                  layoutId="navigation-indicator"
-                  transition={{ duration: shouldReduceMotion ? 0 : 0.3 }}
-                />
-              )}
             </a>
           ))}
           <a
@@ -75,29 +69,35 @@ const Navbar = () => {
           {isMenuOpen ? <X /> : <Menu />}
         </button>
       </nav>
-      {isMenuOpen && (
-        <nav
-          id="mobile-navigation"
-          className="mobile-navigation page-container"
-          aria-label="Mobile navigation"
-        >
-          {[...navigation, { label: "Contact", href: "#contact" }].map(
-            (item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                aria-current={
-                  item.href === `#${activeSection}` ? "location" : undefined
-                }
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item.label}
-                <ArrowUpRight size={16} />
-              </a>
-            ),
-          )}
-        </nav>
-      )}
+      <AnimatePresence initial={false}>
+        {isMenuOpen && (
+          <motion.nav
+            id="mobile-navigation"
+            className="mobile-navigation page-container"
+            aria-label="Mobile navigation"
+            initial={{ opacity: 0, y: shouldReduceMotion ? 0 : -4 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: shouldReduceMotion ? 0 : -4 }}
+            transition={{ duration: shouldReduceMotion ? 0 : 0.16 }}
+          >
+            {[...navigation, { label: "Contact", href: "#contact" }].map(
+              (item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  aria-current={
+                    item.href === `#${activeSection}` ? "location" : undefined
+                  }
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.label}
+                  <ArrowUpRight size={16} />
+                </a>
+              ),
+            )}
+          </motion.nav>
+        )}
+      </AnimatePresence>
     </header>
   );
 };
