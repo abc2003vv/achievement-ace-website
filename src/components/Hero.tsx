@@ -1,57 +1,67 @@
-import React from "react";
-import { Button } from "@/components/ui/button";
-import { Gamepad2, Images } from "lucide-react";
+﻿import { ArrowDown, ArrowUpRight, Code2, Gamepad2 } from "lucide-react";
 import faceImage from "../imagess/Face.jpg";
 
-const Hero = () => {
-  return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-[#F97316]/10 to-[#FB923C]/5 pt-16">
-      <div className="container mx-auto px-4 flex flex-col md:flex-row items-center">
-        <div
-          className="md:w-1/2 animate-fade-in"
-          style={{ animationDelay: "0.2s" }}
-        >
-          <h1 className="text-4xl md:text-6xl font-bold text-[#F97316] mb-4">
-            I'm Nguyen Van Viet
-          </h1>
-          <h2 className="text-2xl md:text-3xl font-medium text-[#EA580C] mb-6 flex items-center">
-            <Gamepad2 className="mr-2" /> About Me
-          </h2>
-          <p className="text-gray-300 text-lg mb-8">
-            I’m a senior student in Computer Science at Van Hien University with
-            a strong passion for game development. I have practical experience
-            in C# and Java through various projects, and have received four
-            awards, including a Game Programming Prize, a Gold Prize, a
-            Blockchain Incubation Award, and an Encouragement Prize. I’m always
-            striving to learn and grow both personally and professionally.
-          </p>
-          <div className="flex space-x-4">
-            <Button className="bg-[#F97316] hover:bg-[#EA580C] text-white">
-              <a href="#project">View Projects</a>
-            </Button>
-            <Button
-              variant="outline"
-              className="border-[#F97316] text-[#F97316] hover:bg-[#F97316]/10"
-            >
-              Contact
-            </Button>
+const Hero = () => (
+  <section id="about" className="hero-section">
+    <div className="page-container hero-grid">
+      <div className="hero-copy">
+        <p className="eyebrow">
+          <span className="status-dot" /> GAME DEVELOPER PORTFOLIO
+        </p>
+        <h1>
+          Hi, I'm Viet.
+          <br />I build games
+          <br />
+          <span>worth playing.</span>
+        </h1>
+        <p className="hero-description">
+          A Gameplay / Unity Developer with a Computer Science background at Van
+          Hien University. I bring mobile puzzles and personal game ideas to
+          life with Unity and C#.
+        </p>
+        <div className="hero-actions">
+          <a href="#projects" className="action-button primary-button">
+            Explore my projects <ArrowUpRight size={19} />
+          </a>
+          <a href="#contact" className="action-button secondary-button">
+            Get in touch <ArrowUpRight size={19} />
+          </a>
+        </div>
+        <div className="skill-list" aria-label="Technical skills">
+          <span>
+            <Gamepad2 size={16} /> Unity
+          </span>
+          <span>
+            <Code2 size={16} /> C#
+          </span>
+          <span>Java</span>
+          <span>2D game development</span>
+        </div>
+      </div>
+      <div className="hero-portrait">
+        <div className="portrait-frame">
+          <img src={faceImage} alt="Nguyen Van Viet" fetchPriority="high" />
+          <div className="portrait-caption">
+            <span>Nguyen Van Viet</span>
+            <span>Game Developer</span>
           </div>
         </div>
-        <div
-          className="md:w-1/2 flex justify-center mt-12 md:mt-0 animate-fade-in"
-          style={{ animationDelay: "0.5s" }}
-        >
-          <div className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-[#F97316]/10 flex items-center justify-center overflow-hidden border-4 border-[#FB923C]">
-            <img
-              src={faceImage}
-              alt="Nguyen Van Viet"
-              className="w-full h-full object-cover rounded-full"
-            />
+        <div className="portrait-note">
+          <Gamepad2 size={22} />
+          <div>
+            <strong>From an idea to a playable world.</strong>
+            <span>Code. Create. Keep learning.</span>
           </div>
         </div>
       </div>
     </div>
-  );
-};
+    <div className="page-container hero-bottom">
+      <span>CREATIVE MIND. DEVELOPER AT HEART.</span>
+      <a href="#projects">
+        Discover my work <ArrowDown size={16} />
+      </a>
+    </div>
+  </section>
+);
 
 export default Hero;

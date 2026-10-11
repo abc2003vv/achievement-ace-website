@@ -5,6 +5,7 @@ import Awards from "@/components/Awards";
 import Projects from "@/components/Projects";
 import Footer from "@/components/Footer";
 import Contact from "@/components/Contact";
+import Reveal from "@/components/Reveal";
 const Index = () => {
   useEffect(() => {
     // Update document title
@@ -12,13 +13,22 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen bg-background text-foreground">
+    <div className="portfolio-page">
+      <a href="#main-content" className="skip-link">
+        Skip to content
+      </a>
       <Navbar />
-      <main className="flex-grow">
+      <main id="main-content" tabIndex={-1}>
         <Hero />
-        <Projects />
-        <Awards />
-        <Contact />
+        <Reveal>
+          <Projects />
+        </Reveal>
+        <Reveal>
+          <Awards />
+        </Reveal>
+        <Reveal>
+          <Contact />
+        </Reveal>
       </main>
       <Footer />
     </div>
